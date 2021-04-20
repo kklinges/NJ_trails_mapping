@@ -1,0 +1,255 @@
+/* General */
+* {
+    margin: 0;
+}
+body {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 140%;
+    text-rendering: optimizeLegibility;
+}
+h1 {
+    text-align: center;
+}
+:root {
+    --theme-dvrpc: #0078ae;
+    --theme-dark: #505a5e;
+
+    --wrapper-padding: 10px;
+    --wrapper-padding-double: 20px;
+
+    --border-radius: 4px;
+    --box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.flex-between {
+    justify-content: space-between;
+}
+.flex-around {
+    justify-content: space-around;
+}
+.flex-end {
+    justify-content: flex-end;
+}
+/* END General */
+
+
+
+/* Modal */
+#modal-content{
+    box-shadow: var(--box-shadow);
+}
+#modal-toggle, #close-modal{
+    cursor: pointer;
+    font-size: inherit;
+}
+#modal{
+    position: fixed;
+    display: none;
+    z-index: 3;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+
+#modal-content{
+    position: relative;
+    background: #fff;
+    width: 50%;
+    padding: var(--wrapper-padding-double);
+    border-radius: var(--border-radius);
+    filter: brightness(150%);
+}
+
+#close-modal{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 1.5em;
+}
+.modal-content-subheader {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+/*
+#modal-footer {
+    font-style: italic;
+    background-color: #b9def0!important;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 10px;
+    background-image: linear-gradient(to bottom,#d9edf7 0,#b9def0 100%)!important;
+    }
+    */
+/* END Modal */
+
+
+
+/* Navbar */
+nav {
+    position: relative;
+    height: 6vh;
+    padding: 0 var(--wrapper-padding);
+    background-color: var(--theme-dvrpc);
+    color: #f7f7f7;
+    box-shadow: var(--box-shadow);
+    z-index: 1;
+}
+
+/*KK added*/
+/*
+.nav-title{
+    position: absolute;
+    color:#ffffff;
+    line-height: 200%;
+    font-size: 100 px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+*/
+/*KK added*/
+.nav-links {
+    color: #f7f7f7;
+}
+.nav-btn {
+    background: transparent;
+    border: none;
+    text-decoration: underline;
+    padding: 0;
+}
+.nav-vr {
+    margin: 0 5px;
+}
+#dvrpc-logo {
+    display: block;
+    width: 75px;
+}
+/* END Navbar */
+
+
+/*Toggle menu - KK added*/
+    #menu {
+        background: #fff;
+        position: absolute;
+        z-index: 1;
+        top: 85px;
+        right: 50px;
+        border-radius: 3px;
+        width: 120px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        font-family: 'Roboto', sans-serif;
+        }
+         
+        #menu a {
+        font-size: 13px;
+        color: #404040;
+        display: block;
+        margin: 0;
+        padding: 0;
+        padding: 10px;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+        text-align: center;
+        }
+         
+        #menu a:last-child {
+        border: none;
+        }
+         
+        #menu a:hover {
+        background-color: #f8f8f8;
+        color: #404040;
+        }
+         
+        #menu a.active {
+        background-color: rgba(0,120,174,0.90);
+        color: #ffffff;
+        }
+         
+        #menu a.active:hover {
+        background: #3074a4;
+        }
+/*Toggle menu - KK added*/
+
+/* Main Webmap Area */
+#regional-extent-img {
+    display: block;
+    margin: 0 auto;
+    height: 20px;
+    width: 20px;
+}
+/* END Main Webmap Area */
+
+/* Map */
+#map {
+    width: 100%;
+    height: 94vh;
+}
+
+/*Legend -- KK added*/
+.legend {
+    background-color:rgba(222, 222, 223, 0.8);
+    border-radius: 3px;
+    bottom: 30px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font:'Roboto', sans-serif;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+    }
+     
+    .legend h4 {
+    margin: 0 0 10px;
+    }
+     
+    .legend div span {
+    border-radius: 50%;
+    display: inline-block;
+    height: 10px;
+    margin-right: 5px;
+    width: 10px;
+    }
+/*Legend -- KK added*/
+
+/*Popups*/
+.mapboxgl-popup-content {
+    color: #000000;
+    background-color: rgba(18, 143, 192, 0.88);
+    border-color: #6D7E79;
+    max-width: 250px;
+    box-shadow: 3px 3px 2px #6D7E79;
+    font-family: 'Roboto', sans-serif;
+    padding: var(--wrapper-padding-double) var(--wrapper-padding);
+}
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+    border-bottom-color:rgba(18, 143, 192, 0.88);
+    }
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+    border-top-color:rgba(18, 143, 192, 0.88);
+    }
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+    border-right-color:rgba(18, 143, 192, 0.88);
+    }
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+    border-left-color:rgba(18, 143, 192, 0.88);
+    }
+/* END Map */
+
+
